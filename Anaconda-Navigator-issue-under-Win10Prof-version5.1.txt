@@ -1,0 +1,66 @@
+Navigator Error
+An unexpected error occurred on Navigator start-up
+Report
+Please report this issue in the anaconda issue tracker 
+Main Error
+
+could not determine a constructor for the tag 'tag:yaml.org,2002:python/unicode'
+  in "C:\Users\jhlad\AppData\Local\ContinuumIO\binstar\config.yaml", line 1, column 1
+
+Traceback
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\exceptions.py", line 75, in exception_handler
+    return_value = func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\app\start.py", line 120, in start_app
+    window = run_app(splash)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\app\start.py", line 63, in run_app
+    window = MainWindow(splash=splash)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\widgets\main_window.py", line 163, in __init__
+    self.api = AnacondaAPI()
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\api\anaconda_api.py", line 2004, in AnacondaAPI
+    ANACONDA_API = _AnacondaAPI()
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\api\anaconda_api.py", line 89, in __init__
+    self._client_api = ClientAPI()
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\api\client_api.py", line 612, in ClientAPI
+    CLIENT_API = _ClientAPI()
+  File "C:\ProgramData\Anaconda2\lib\site-packages\anaconda_navigator\api\client_api.py", line 82, in __init__
+    log_level=logging.NOTSET
+  File "C:\ProgramData\Anaconda2\lib\site-packages\binstar_client\utils\config.py", line 96, in get_server_api
+    config = get_config(remote_site=site)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\binstar_client\utils\config.py", line 229, in get_config
+    file_configs = load_file_configs(SEARCH_PATH)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\binstar_client\utils\config.py", line 223, in load_file_configs
+    raw_data = collections.OrderedDict(kv for kv in itertools.chain.from_iterable(load_paths))
+  File "C:\ProgramData\Anaconda2\lib\collections.py", line 69, in __init__
+    self.__update(*args, **kwds)
+  File "C:\ProgramData\Anaconda2\lib\_abcoll.py", line 571, in update
+    for key, value in other:
+  File "C:\ProgramData\Anaconda2\lib\site-packages\binstar_client\utils\config.py", line 223, in 
+    raw_data = collections.OrderedDict(kv for kv in itertools.chain.from_iterable(load_paths))
+  File "C:\ProgramData\Anaconda2\lib\site-packages\binstar_client\utils\config.py", line 203, in _dir_yaml_loader
+    yield filepath, load_config(filepath)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\binstar_client\utils\config.py", line 187, in load_config
+    data = yaml_load(fd)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\binstar_client\utils\yaml.py", line 9, in yaml_load
+    return safe_load(stream)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\__init__.py", line 93, in safe_load
+    return load(stream, SafeLoader)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\__init__.py", line 71, in load
+    return loader.get_single_data()
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\constructor.py", line 39, in get_single_data
+    return self.construct_document(node)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\constructor.py", line 48, in construct_document
+    for dummy in generator:
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\constructor.py", line 398, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\constructor.py", line 208, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\constructor.py", line 127, in construct_mapping
+    key = self.construct_object(key_node, deep=deep)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\constructor.py", line 88, in construct_object
+    data = constructor(self, node)
+  File "C:\ProgramData\Anaconda2\lib\site-packages\yaml\constructor.py", line 414, in construct_undefined
+    node.start_mark)
+ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:python/unicode'
+  in "C:\Users\jhlad\AppData\Local\ContinuumIO\binstar\config.yaml", line 1, column 1
